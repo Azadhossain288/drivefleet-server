@@ -16,7 +16,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
   origin: [
     'http://localhost:3000', 
-    'https://your-live-client-site.vercel.app' // ডেপ্লয় করার পর এখানে বসাবেন
+    'http://localhost:3001', 
+    'https://your-live-client-site.vercel.app' 
   ],
   credentials: true 
 }));
