@@ -17,7 +17,7 @@ app.use(cors({
   origin: [
     'http://localhost:3000', 
     'http://localhost:3001', 
-    'https://your-live-client-site.vercel.app' 
+    'https://drivefleet-client-odwy.vercel.app' 
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
