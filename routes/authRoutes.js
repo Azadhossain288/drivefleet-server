@@ -12,8 +12,8 @@ router.post('/jwt', async (req, res) => {
     res
       .cookie('token', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', 
-        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+        secure: true,      
+        sameSite: 'none',  
       })
       .send({ success: true });
   } catch (error) {
@@ -21,14 +21,13 @@ router.post('/jwt', async (req, res) => {
   }
 });
 
-
+// ২. logout and clear cookie
 router.post('/logout', async (req, res) => {
   try {
     res
       .clearCookie('token', {
-        maxAge: 0,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+        secure: true,      
+        sameSite: 'none',  
       })
       .send({ success: true });
   } catch (error) {
